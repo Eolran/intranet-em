@@ -1,0 +1,15 @@
+.Nav {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(#4600dd, #8d00b6);
+}
