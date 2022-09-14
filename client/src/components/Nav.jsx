@@ -7,6 +7,8 @@ function Logout() {
 }
 
 function Nav() {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    console.log(userInfo);
 
     return (
         <div className="Nav">
@@ -16,8 +18,12 @@ function Nav() {
                     {/* <div>
                         if admin
                     </div> */}
-                    <button>List</button>
-                    <button>Own</button>
+                    <button className='profilePic'>
+                        <img src={userInfo.photo} alt="" />
+                        <span>
+                            {userInfo.firstname + " " + userInfo.lastname}
+                        </span>
+                    </button>
                     <button onClick={Logout}>Logout</button>
                 </div>
             </nav>
