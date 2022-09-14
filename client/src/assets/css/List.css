@@ -24,6 +24,7 @@
     box-shadow: 10px 5px 5px gray;
     margin: 2rem;
 }
+
 .Card:hover {
     position: relative;
     bottom: 5px;

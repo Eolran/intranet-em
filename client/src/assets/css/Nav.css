@@ -13,3 +13,17 @@ nav {
     padding: 1rem;
     background: linear-gradient(#4600dd, #8d00b6);
 }
+
+.profilePic img{
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin-bottom: 0;
+    text-align: center;
+    place-items: center;
+}
+
+nav button {
+    height: 50px;
+    margin: 0px 0.25rem;
+}

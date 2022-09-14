@@ -1,0 +1,36 @@
+.CardDetail {
+    width: 80%;
+    background: linear-gradient(to left, #4600dd, #8d00b6);
+    position: relative;
+    border-radius: 50px 10px 10px 50px;
+    box-shadow: 10px 5px 5px gray;
+    margin: 3rem auto;
+}
+
+.CardDetail .CardInfo {
+    display: flex;
+    flex-direction: column;
+    color: azure;
+}
+
+.CardDetail .CardInfo img {
+    margin-bottom: 0;
+    border-radius: 50px 0px 50px 0px;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+}
+
+.CardDetail .tag {
+    padding: 0.75rem;
+    font-size: 24px;
+}
+
+.CardDetail .UserInfo {
+    padding: 2.5rem 2rem;
+}
+
+.CardDetail .UserInfo span{
+    margin: 10px 0px;
+    font-size: 21px;
+}

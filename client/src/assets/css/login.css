@@ -2,12 +2,20 @@ body {
     background-color: white;
 }
 
+.LoginApp{
+    margin-top: 5rem;
+}
+
 .login {
     padding: 5rem 3rem;
     background: linear-gradient(#4600dd, #8d00b6);
     padding: auto;
     box-shadow: 10px 5px 5px gray;
     border-radius: 2rem;
+}
+
+.login h1 {
+    color: white;
 }
 
 .title {
