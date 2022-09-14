@@ -6,7 +6,7 @@ function UserCard({ user }) {
 
     return (
         <div className="Card">
-            <Link to={"/"}>
+            <Link to={"/user/"+user.id}>
                 <div className='CardInfo'>
                     <div>
                         <img src={user.photo} alt="avatar" />
