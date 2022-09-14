@@ -15,9 +15,10 @@ function Nav() {
             <nav>
                 <img src="test" alt="test" />
                 <div>
-                    {/* <div>
-                        if admin
-                    </div> */}
+                    {userInfo.isAdmin && 
+                    <button>
+                        Ajouter un collaborateur
+                    </button>}
                     <button className='profilePic'>
                         <img src={userInfo.photo} alt="" />
                         <span>

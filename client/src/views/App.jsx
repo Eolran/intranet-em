@@ -6,6 +6,7 @@ import ListUsers from './listUsers'
 import User from './User'
 import Random from './Random'
 import Nav from '../components/Nav'
+import AddUser from './AddUser'
 
 function setToken(userToken) {
   localStorage.setItem('token', JSON.stringify(userToken));
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/random" element={<Random />} />
           <Route path="/list" element={<ListUsers />} />
+          <Route path="/admin/Add" element={<AddUser />} />
           <Route path="/user/:id" element={<User />} />
         </Routes>
       </div>

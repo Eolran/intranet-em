@@ -71,3 +71,19 @@ export async function UserRandom() {
         return data;
     }
 }
+
+export async function addUser(credentials) {
+    let response = await fetch('http://localhost:7000/api/collaborateurs', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer " + token,
+        },
+        body: JSON.stringify(credentials)
+    })
+
+    if (response.status == 200) {
+        let data = await response.json();
+        console.log(data);
+    }
+}
