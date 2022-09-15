@@ -17,7 +17,7 @@ function Login() {
             "email": username,
             "password": password
         });
-        ShowList();
+        //ShowList();
         window.location = "/random";
     }
 

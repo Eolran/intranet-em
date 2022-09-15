@@ -2,7 +2,11 @@ import { useSelector } from 'react-redux'
 import '../assets/css/App.css'
 import '../assets/css/List.css'
 import UserCard from '../components/UserCard'
+import { ShowList } from '../services/api.service.js';
 
+
+const token = localStorage.getItem('token');
+{token && ShowList()}
 
 function ListUsers() {
 
