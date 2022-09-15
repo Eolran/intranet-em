@@ -43,3 +43,12 @@ input {
     border: 0px;
     border-bottom: 1px solid gray !important;
 }
+
+.EditAdd {
+    width: 60%;
+    padding: 5rem 3rem;
+    background: linear-gradient(#4600dd, #8d00b6);
+    padding: auto;
+    box-shadow: 10px 5px 5px gray;
+    border-radius: 2rem;
+}
