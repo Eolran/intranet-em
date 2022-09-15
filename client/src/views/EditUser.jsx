@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import { addUser } from '../services/api.service.js';
+import { UserEdit } from '../services/api.service.js';
 import '../assets/css/App.css'
 import '../assets/css/login.css'
 
 
 
-function AddUser() {
+function EditUser() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [phone, setPhone] = useState();
@@ -21,7 +21,7 @@ function AddUser() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const data = await addUser(
+        const data = UserEdit(
             {
                 "gender": gender,
                 "firstname": firstname,
@@ -35,6 +35,7 @@ function AddUser() {
                 "photo": photo,
                 "service": service
             },
+            //Ajouter ID
         );
         // window.location = "/user";
     }
@@ -50,12 +51,13 @@ function AddUser() {
             <div className='d-flex flex-column flex-center'>
                 <div className='title'>
                     <img src="../assets/em_logo.png" alt="em_logo" />
-                    <span>Ajouter un collaborateur à l'Intranet de l'École Multimédia</span>
+                    <span>Editer un profil de collaborateur à l'Intranet de l'École Multimédia</span>
                 </div>
                 <div className="EditAdd">
                     <form onSubmit={handleSubmit}>
                         <input type="email" placeholder='Email' onChange={e => setEmail(e.target.value)} />
                         <input type="password" placeholder='Mot de passe' onChange={e => setPassword(e.target.value)} />
+                        <input type="password" placeholder='Confirmation' onChange={e => e.target.value? password:"Pas Le même mot de passe"} />
                         <input type="text" placeholder='Nom' onChange={e => setLastname(e.target.value)} />
                         <input type="text" placeholder='Prénom' onChange={e => setFirstname(e.target.value)} />
                         <input type="text" placeholder='Service' onChange={e => setService(e.target.value)} />
@@ -66,7 +68,7 @@ function AddUser() {
                         <input type="text" placeholder='Date de naissance' onChange={e => setDoB(e.target.value)} />
                         <input type="text" placeholder='Photo' onChange={e => setPhoto(e.target.value)} />
                         <div>
-                            <button type="submit">Ajouter un collaborateur</button>
+                            <button type="submit">Editer un collaborateur</button>
                         </div>
                     </form>
                 </div>
@@ -75,4 +77,4 @@ function AddUser() {
     )
 }
 
-export default AddUser
+export default EditUser

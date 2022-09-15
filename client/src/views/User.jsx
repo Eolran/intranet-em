@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import '../assets/css/App.css'
 import '../assets/css/UserDetails.css'
-import { UserDetails } from '../services/api.service.js';
+import { UserDetails, DeleteUser, EditUser } from '../services/api.service.js';
 
 
 function User() {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+
     const [UserInfos, setUserInfos] = useState(null)
-
-
     useEffect(() => {
         const url = window.location.href;
         const User = UserDetails(url.split("/")[4])
@@ -38,6 +39,12 @@ function User() {
                             <span>
                                 {UserInfos.phone}
                             </span>
+                            {userInfo.isAdmin == true && 
+                            <div>
+                                <button onClick={EditUser(UserInfos.id)}>Éditer</button>
+                                <button onClick={DeleteUser(UserInfos.id)}>Supprimer</button>
+                            </div>
+                            }
                         </div>
                         <span className='tag'>
                             {UserInfos.service}
