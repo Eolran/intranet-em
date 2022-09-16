@@ -628,5 +628,20 @@
     "photo": "https://randomuser.me/api/portraits/men/42.jpg",
     "service": "Client",
     "isAdmin": true
+  },
+  {
+    "id": "43",
+    "gender": "male",
+    "firstname": "Yoann",
+    "lastname": "Legrand",
+    "email": "admin2@admin.com",
+    "password": "$2b$10$31.T.lm8RktHEeaU89shD.TwLi0VCH9t7Vw2P4dq4eZ0vQiBKZ2Zy",
+    "phone": "07-39-81-18-27",
+    "birthdate": "1998-11-10",
+    "city": "Paris",
+    "country": "France",
+    "photo": "https://www.looper.com/img/gallery/the-history-of-neo-from-the-matrix-explained/l-intro-1636395579.jpg",
+    "service": "Technique",
+    "isAdmin": true
   }
 ]

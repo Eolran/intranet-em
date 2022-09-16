@@ -86,6 +86,7 @@ export async function addUser(credentials) {
     if (response.status == 201) {
         let data = await response.json();
         console.log(data);
+        ShowList()
     } else {
         console.log(response);
     }
@@ -105,6 +106,7 @@ export async function DeleteUser(id) {
     if (response.status == 200) {
         let data = await response.json();
         console.log(data);
+        ShowList()
     } else {
         console.log(response);
     }
@@ -125,6 +127,7 @@ export async function UserEdit(credentials, id) {
     if (response.status == 201) {
         let data = await response.json();
         console.log(data);
+        ShowList()
     } else {
         console.log(response);
     }

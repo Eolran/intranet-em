@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useRef, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import '../assets/css/App.css'
 import '../assets/css/List.css'
 import UserCard from '../components/UserCard'
 import { ShowList } from '../services/api.service.js';
 import { Search } from '../services/search.service.js';
+import { REPLACE } from '../store/reducer';
 
 
 const token = localStorage.getItem('token');
@@ -13,18 +14,28 @@ const token = localStorage.getItem('token');
 
 function ListUsers() {
 
+    const dispatch = useDispatch();
+
     const SearchValue = useRef("");
     const [select1, setSelect1] = useState("name");
-    const [select2, setSelect2] = useState(null);
+    const [select2, setSelect2] = useState("all");
 
-    const user = useSelector((state) => 
+    let user = useSelector((state) => 
     state.user
   )
+    const [usersList, setUsersList] = useState(user);
+
+
+  useEffect(() => {
+    console.log(usersList)
+    },
+    [usersList]);
+    console.log(usersList)
 
 
     function OnSearch(e) {
         SearchValue.current = e.target.value;
-        Search(SearchValue, user, select1, select2)
+        Search(SearchValue, user, select1, select2, dispatch, setUsersList)
         // console.log(SearchValue);
         console.log(select1, select2);
     }
@@ -33,7 +44,7 @@ function ListUsers() {
         <div className="App">
             <div className='List'>
                 <div className='Search'>
-                    <input onChange={(e) => OnSearch(e)} type="text" id='inputSearch' placeholder='Recherche' />
+                    <input onInput={(e) => OnSearch(e)} type="text" id='inputSearch' placeholder='Recherche' />
                     Rechercher par : 
                     <select onChange={(e) => setSelect1(e.target.value)} name="select1" id="select1Search">
                         <option value="name">Noms</option>
@@ -48,7 +59,7 @@ function ListUsers() {
                 </div>
                 <div className='UsersList'>
                     { 
-                        user.map((user, i) => <UserCard user = {user} key={Date.now + i} />)
+                        usersList.map((user, i) => <UserCard userList= {usersList} setUsersList = {setUsersList} user = {user} key={Date.now + i} />)
                     }
                 </div>
             </div>

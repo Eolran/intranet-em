@@ -5,11 +5,13 @@ import '../assets/css/Nav.css'
 
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
-function UserCard({ user }) {
+function UserCard({ user, userList, setUsersList }) {
 
     function handleDelete() {
         DeleteUser(user.id);
-        window.location = "/list";
+
+        let updateArray = userList.filter(element => element.id!=user.id);
+        setUsersList(updateArray);
     }
 
     return (
