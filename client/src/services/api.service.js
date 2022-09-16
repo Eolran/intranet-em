@@ -28,7 +28,6 @@ export async function ShowList() {
 
     if (response.status == 200) {
         let data = await response.json();
-        console.log(data);
 
         localStorage.setItem('usersList', JSON.stringify(data));
     }
@@ -93,6 +92,8 @@ export async function addUser(credentials) {
 }
 
 export async function DeleteUser(id) {
+    const token = localStorage.getItem('token');
+
     let response = await fetch('http://localhost:7000/api/collaborateurs/'+id, {
         method: 'DELETE',
         headers: {
@@ -121,7 +122,7 @@ export async function UserEdit(credentials, id) {
         body: JSON.stringify(credentials),
     })
 
-    if (response.status == 200) {
+    if (response.status == 201) {
         let data = await response.json();
         console.log(data);
     } else {

@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/css/App.css'
 import '../assets/css/UserDetails.css'
-import { UserDetails, DeleteUser, EditUser } from '../services/api.service.js';
+import { UserDetails, DeleteUser } from '../services/api.service.js';
 
 
 function User() {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+
 
 
     const [UserInfos, setUserInfos] = useState(null)
@@ -17,6 +20,11 @@ function User() {
             setUserInfos(res);
         })
     }, []);
+
+    function handleDelete() {
+        DeleteUser(UserInfos.id);
+        window.location = "/list";
+    }
 
     return (
         <div>
@@ -39,12 +47,15 @@ function User() {
                             <span>
                                 {UserInfos.phone}
                             </span>
-                            {userInfo.isAdmin == true && 
-                            <div>
-                                <button onClick={EditUser(UserInfos.id)}>Éditer</button>
-                                <button onClick={DeleteUser(UserInfos.id)}>Supprimer</button>
-                            </div>
-                            }
+
+                            {(userInfo.isAdmin || userInfo.id == UserInfos.id) &&
+                                <div className='btnsAdmin'>
+                                    <Link to={"/admin/Edit?id="+UserInfos.id}>
+                                        <button>Éditer</button>
+                                    </Link>
+                                    {userInfo.isAdmin && <button onClick={handleDelete}>Supprimer</button>}
+                                </div>}
+
                         </div>
                         <span className='tag'>
                             {UserInfos.service}
