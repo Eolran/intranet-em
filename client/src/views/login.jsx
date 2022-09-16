@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import { loginUser, ShowList } from '../services/api.service.js';
+import { loginUser } from '../services/api.service.js';
 import '../assets/css/App.css'
 import '../assets/css/login.css'
+import ListUsers from './listUsers'
 
-
+const token = localStorage.getItem('token');
 
 function Login() {
     const [username, setUserName] = useState();
@@ -20,6 +21,10 @@ function Login() {
         //ShowList();
         window.location = "/random";
     }
+
+    if(token) {
+        return <ListUsers />
+      }
 
     return (
         <div className='LoginApp'>
