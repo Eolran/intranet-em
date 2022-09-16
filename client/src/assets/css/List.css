@@ -25,6 +25,9 @@
     margin: 2rem;
     height: 135px;
 }
+.List input {
+    color: black;
+}
 
 .Card:hover {
     position: relative;
@@ -36,6 +39,7 @@
     margin-bottom: 0;
     border-radius: 50px 0px 0px 50px;
     height: 135px;
+    width: 135px;
 }
 
 .CardInfo {

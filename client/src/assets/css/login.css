@@ -52,3 +52,20 @@ input {
     box-shadow: 10px 5px 5px gray;
     border-radius: 2rem;
 }
+
+.EditAdd select{
+    margin: 15px 0px; 
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid gray !important;
+}
+
+.EditAdd select option{
+    color: black;
+    margin: 15px 0px; 
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid gray !important;
+}

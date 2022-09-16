@@ -34,3 +34,9 @@
     margin: 10px 0px;
     font-size: 21px;
 }
+
+.btnsAdmin {
+    position: absolute;
+    right: 1%;
+    font-size: 12px;
+}
