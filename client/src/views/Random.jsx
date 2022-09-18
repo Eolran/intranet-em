@@ -16,7 +16,7 @@ function Random() {
     
 
     return (
-        <div>
+        <div className='d-flex flex-column'>
             <h1>Découvrez un collaborateur au hasard !</h1>
             <div className="CardDetail">
                 {UserInfos &&
@@ -44,7 +44,7 @@ function Random() {
                 </div>}
             </div>
 
-            <button onClick={() => window.location.href = "/list"}>
+            <button className='btnCollab' onClick={() => window.location.href = "/list"}>
                 Voir la liste complète des collaborateurs
             </button>
         </div>

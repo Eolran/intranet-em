@@ -27,7 +27,7 @@ function User() {
     }
 
     return (
-        <div>
+        <div className='d-flex flex-column'>
             <div className="CardDetail">
                 {UserInfos &&
                     <div className='CardInfo'>
@@ -63,7 +63,7 @@ function User() {
                     </div>}
             </div>
 
-            <button onClick={() => window.location.href = "/list"}>
+            <button className='btnCollab' onClick={() => window.location.href = "/list"}>
                 Retourner à la liste complète des collaborateurs
             </button>
         </div>

@@ -1,6 +1,6 @@
 .CardDetail {
     width: 80%;
-    background: linear-gradient(to left, #4600dd, #8d00b6);
+    background: linear-gradient(to left, #cdf1b4, #76cfff);
     position: relative;
     border-radius: 50px 10px 10px 50px;
     box-shadow: 10px 5px 5px gray;
@@ -10,7 +10,7 @@
 .CardDetail .CardInfo {
     display: flex;
     flex-direction: column;
-    color: azure;
+    color: black;
 }
 
 .CardDetail .CardInfo img {
@@ -39,4 +39,8 @@
     position: absolute;
     right: 1%;
     font-size: 12px;
+}
+
+.btnCollab {
+    margin: 0px auto;
 }

@@ -18,7 +18,7 @@ function Nav() {
                 <Link to={"/list"}>
                     <img src={emLogo} alt="emLogo" />
                 </Link>
-                <div>
+                <div className="navBtn">
                     {userInfo.isAdmin &&
                         <Link to={"/admin/Add"}>
                             <button>

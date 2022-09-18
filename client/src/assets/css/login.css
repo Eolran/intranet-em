@@ -8,14 +8,14 @@ body {
 
 .login {
     padding: 5rem 3rem;
-    background: linear-gradient(#4600dd, #8d00b6);
+    background: linear-gradient(#a6dd82, #b3d9ee);
     padding: auto;
     box-shadow: 10px 5px 5px gray;
     border-radius: 2rem;
 }
 
 .login h1 {
-    color: white;
+    color: black;
 }
 
 .title {
@@ -25,6 +25,11 @@ body {
     font-weight: 700;
     color: #4600dd;
     margin-bottom: 3rem;
+}
+
+.title  img{
+    height: 200px;
+    width: 500px;
 }
 
 img {
@@ -42,12 +47,13 @@ input {
     background-color: transparent;
     border: 0px;
     border-bottom: 1px solid gray !important;
+    color: black;
 }
 
 .EditAdd {
     width: 60%;
     padding: 5rem 3rem;
-    background: linear-gradient(#4600dd, #8d00b6);
+    background: linear-gradient(#a6dd82, #b3d9ee);
     padding: auto;
     box-shadow: 10px 5px 5px gray;
     border-radius: 2rem;
@@ -59,6 +65,7 @@ input {
     background-color: transparent;
     border: 0px;
     border-bottom: 1px solid gray !important;
+    color: black;
 }
 
 .EditAdd select option{
