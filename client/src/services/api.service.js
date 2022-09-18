@@ -12,6 +12,8 @@ export async function loginUser(credentials) {
         console.log(data.token);
         localStorage.setItem('token', data.token);
         localStorage.setItem('userInfo', JSON.stringify(data.user));
+    } else {
+
     }
 }
 
@@ -30,6 +32,9 @@ export async function ShowList() {
         let data = await response.json();
 
         localStorage.setItem('usersList', JSON.stringify(data));
+    } else {
+        localStorage.clear();
+        window.location = "/";
     }
 }
 
@@ -49,6 +54,9 @@ export async function UserDetails(id) {
         console.log(data);
 
         return data;
+    } else {
+        localStorage.clear();
+        window.location = "/";
     }
 }
 
@@ -68,6 +76,9 @@ export async function UserRandom() {
         console.log(data);
 
         return data;
+    } else {
+        localStorage.clear();
+        window.location = "/";
     }
 }
 
@@ -88,7 +99,7 @@ export async function addUser(credentials) {
         console.log(data);
         ShowList()
     } else {
-        console.log(response);
+        window.alert("Le formulaire est mal rempli, veuillez le remplir de nouveau.");
     }
 }
 
@@ -109,7 +120,7 @@ export async function DeleteUser(id) {
         ShowList()
     } else {
         console.log(response);
-    }
+    } 
 }
 
 export async function UserEdit(credentials, id) {
@@ -129,6 +140,6 @@ export async function UserEdit(credentials, id) {
         console.log(data);
         ShowList()
     } else {
-        console.log(response);
+        window.alert("Le formulaire est mal rempli, veuillez le remplir de nouveau.");
     }
 }
