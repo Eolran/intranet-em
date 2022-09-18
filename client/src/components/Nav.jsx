@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import '../assets/css/App.css'
 import '../assets/css/Nav.css'
+import emLogo from '../assets/em_logo.png'
 
 function Logout() {
     localStorage.clear()
@@ -14,7 +15,9 @@ function Nav() {
     return (
         <div className="Nav">
             <nav>
-                <img src="test" alt="test" />
+                <Link to={"/list"}>
+                    <img src={emLogo} alt="emLogo" />
+                </Link>
                 <div>
                     {userInfo.isAdmin &&
                         <Link to={"/admin/Add"}>

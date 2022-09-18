@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { addUser } from '../services/api.service.js';
 import '../assets/css/App.css'
 import '../assets/css/login.css'
+import emLogo from '../assets/em_logo.png'
 
 
 
@@ -49,7 +50,7 @@ function AddUser() {
         <div className='LoginApp'>
             <div className='d-flex flex-column flex-center'>
                 <div className='title'>
-                    <img src="../assets/em_logo.png" alt="em_logo" />
+                    <img src={emLogo} alt="em_logo" />
                     <span>Ajouter un collaborateur à l'Intranet de l'École Multimédia</span>
                 </div>
                 <div className="EditAdd">

@@ -4,6 +4,7 @@ import { UserEdit, UserDetails } from '../services/api.service.js';
 import '../assets/css/App.css'
 import '../assets/css/login.css'
 import ListUsers from './listUsers'
+import emLogo from '../assets/em_logo.png'
 
 
 
@@ -73,7 +74,7 @@ function EditUser() {
         <div className='LoginApp'>
             <div className='d-flex flex-column flex-center'>
                 <div className='title'>
-                    <img src="../assets/em_logo.png" alt="em_logo" />
+                    <img src={emLogo} alt="em_logo" />
                     <span>Editer un profil de collaborateur à l'Intranet de l'École Multimédia</span>
                 </div>
                 <div className="EditAdd">
