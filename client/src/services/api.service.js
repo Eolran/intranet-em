@@ -13,7 +13,7 @@ export async function loginUser(credentials) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userInfo', JSON.stringify(data.user));
     } else {
-
+        window.alert("La connexion n'a pas pu être faites, veuillez réessayer.");
     }
 }
 
